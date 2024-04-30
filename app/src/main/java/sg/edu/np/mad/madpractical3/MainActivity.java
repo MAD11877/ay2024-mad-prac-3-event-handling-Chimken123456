@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tvName = findViewById(R.id.textView2);
         TextView tvDescription = findViewById(R.id.textView3);
         Button btnFollow = findViewById(R.id.button);
+        Button btnMessage = findViewById(R.id.button2);
 
         tvName.setText(user.name);
         tvDescription.setText(user.description);
@@ -63,5 +64,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        btnMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent activity  = new Intent(MainActivity.this,MessageGroup.class);
+                startActivity(activity);
+            }
+        });
     }
 }
