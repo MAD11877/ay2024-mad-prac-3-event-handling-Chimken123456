@@ -33,21 +33,21 @@ public class MainActivity extends AppCompatActivity {
         String key = recieveing_end.getStringExtra("Key");
         User user = new User("John Doe", "MAD Developer",1,false);
 
-        user.setName(user.getName() + " " + key);
+        user.name = user.name + " " + key;
         TextView tvName = findViewById(R.id.textView2);
         TextView tvDescription = findViewById(R.id.textView3);
         Button btnFollow = findViewById(R.id.button);
         Button btnMessage = findViewById(R.id.button2);
 
-        tvName.setText(user.getName());
-        tvDescription.setText(user.getDescription());
+        tvName.setText(user.name);
+        tvDescription.setText(user.description);
         btnFollow.setText("Follow");
 
         btnFollow.setOnClickListener(new View.OnClickListener() {
             //            @Override
             public void onClick(View v) {
-                user.setFollowed(!user.getFollowed());
-                if(user.getFollowed())
+                user.followed = !user.followed;
+                if(user.followed)
                 {
                     btnFollow.setText("Unfollow");
                     Toast.makeText(getApplicationContext(),"Followed",Toast.LENGTH_SHORT).show();
